@@ -1,0 +1,10 @@
+from SQLiteHandler import SQLiteHandler
+
+def main():
+    test = SQLiteHandler("test-db")
+    print(test.checkTableExists('Cars'))
+    print(test.createTable("Students", '(id text, age real)'))
+    print(test.getTables())
+
+if __name__ == '__main__':
+    main()

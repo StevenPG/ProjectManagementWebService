@@ -1,0 +1,27 @@
+'''
+@author: Steven Gantz
+@date: 2/4/2016
+@file: This file works as an abstraction layer between 
+making SQLite calls for the Project Management Web 
+Service application. This allows for easy SQLite3 
+calls that will hide away error checking and 
+some light database manipulation.
+'''
+
+class SQLiteHandler(object):
+    """
+    This class allows for easy SQLite3
+    calls that will hide away error checking and
+    some light database manipulation.
+    """
+
+    """ Name of the database for internal use """
+    self.dbName = None
+
+    def __init__(self, dbName):
+        """ Standard constructor that saves the db name  """
+        self.dbName = dbName
+
+    
+
+    
