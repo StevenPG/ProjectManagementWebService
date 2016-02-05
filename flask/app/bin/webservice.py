@@ -16,9 +16,9 @@ app = Flask(__name__)
 def main():
     return 'Hello, World!'
 
-@app.route('/johncena')
-def test():
-    return "John Cena"
+@app.route('/databasetest')
+def dbtest():
+    return 'Database Test'
 
 #Implement autorunner when run locally
 if __name__ == '__main__':
