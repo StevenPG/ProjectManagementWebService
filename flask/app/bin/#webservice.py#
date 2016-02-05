@@ -23,25 +23,22 @@ def main():
 @app.route('/databasetest')
 def dbtest():
     conn = sqlite3.connect('test-db')
-
-    # Create table
-    with conn:
-        cur = conn.cursor()
-        #cur.execute("CREATE TABLE Cars(Id INT, Name TEXT, Price INT)")
-        cur.execute("INSERT INTO Cars VALUES(1,'Audi',52642)")
-        cur.execute("INSERT INTO Cars VALUES(2,'Mercedes',57127)")
-        cur.execute("INSERT INTO Cars VALUES(3,'Skoda',9000)")
-        cur.execute("INSERT INTO Cars VALUES(4,'Volvo',29000)")
-        cur.execute("INSERT INTO Cars VALUES(5,'Bentley',350000)")
-        cur.execute("INSERT INTO Cars VALUES(6,'Citroen',21000)")
-        cur.execute("INSERT INTO Cars VALUES(7,'Hummer',41400)")
-        cur.execute("INSERT INTO Cars VALUES(8,'Volkswagen',21600)")
+    c = conn.cursor()
     
+    # Create table
+    c.execute('''CREATE TABLE names             (date text, trans text, symbol text, qty real, price real)''')
+
+    # Insert a row of data
+    c.execute("INSERT INTO names VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
+
+    # Save (commit) the changes
+    conn.commit()
+
     # We can also close the connection if we are done with it.
     # Just be sure any changes have been committed or they will be lost.
     conn.close()
     
-    return str('test')
+    return 'test'
 
 #Implement autorunner when run locally
 if __name__ == '__main__':
