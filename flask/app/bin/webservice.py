@@ -28,15 +28,17 @@ def createaccount():
     #Retrieve parameters
     user = request.args.get('user')
     passwd = request.args.get('passwd')
+    uniqueId = request.args.get('id')
     if(user == None):
         user = 'empty'
     if(passwd == None):
         passwd = 'empty'
 
     handler = SQLiteHandler('PM-Web.db')
-    handler.insertIntoTable('User', 'email, password', '"test1", "test2"')
-        
-    return str(user + passwd)
+    handler.insertIntoTable('User', 'firstname,lastname,email,password,bio,projectlist,picture', 'null,null,"' + user + '","' + passwd + '",null,null,null')
+    var = handler.selectFromTable('User', '*')
+    
+    return str(var)
     
 #Implement autorunner when run locally
 if __name__ == '__main__':

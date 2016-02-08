@@ -28,7 +28,7 @@ class SQLiteHandler(object):
 
     def __connectDB(self):
         """ Open a connection to the database """
-        self.conn = sqlite3.connect(self.dbName)
+        self.conn = sqlite3.connect(self.dbName, timeout=10)
 
     def __disconnectDB(self):
         """ Close an open connection to the database """
@@ -36,12 +36,16 @@ class SQLiteHandler(object):
 
     def insertIntoTable(self, tableName, columns, values):
         """ Insert data into table """
-        self.__connectDB()
-        cursor = self.conn.cursor()
+        try:
+            self.__connectDB()
+            cursor = self.conn.cursor()
 
-        cursor.execute('INSERT INTO ' + tableName + ' (' + columns + ') VALUES (' + values + ')')
-        
-        self.__disconnectDB()
+            cursor.execute('INSERT INTO ' + tableName + ' (' + columns + ') VALUES (' + values + ')')
+
+            self.conn.commit()
+            
+        finally:
+            self.__disconnectDB()
 
     def selectFromTable(self, tableName, columnName):
         """ Retrieve an array of all values in a row within in a table """
@@ -49,12 +53,8 @@ class SQLiteHandler(object):
         cursor = self.conn.cursor()
 
         cursor.execute('SELECT ' + columnName + ' FROM ' + tableName)
-        for row in cursor:
-            print '0' + row[0]
-            print '1' + row[1]
-            
 
-        return 'test'
+        return cursor.fetchall()
         
         self.__disconnectDB()
 
