@@ -34,6 +34,39 @@ class SQLiteHandler(object):
         """ Close an open connection to the database """
         self.conn.close()
 
+    def insertIntoTable(self, tableName, columns, values):
+        """ Insert data into table """
+        self.__connectDB()
+        cursor = self.conn.cursor()
+
+        cursor.execute('INSERT INTO ' + tableName + ' (' + columns + ') VALUES (' + values + ')')
+        
+        self.__disconnectDB()
+
+    def selectFromTable(self, tableName, columnName):
+        """ Retrieve an array of all values in a row within in a table """
+        self.__connectDB()
+        cursor = self.conn.cursor()
+
+        cursor.execute('SELECT ' + columnName + ' FROM ' + tableName)
+        for row in cursor:
+            print '0' + row[0]
+            print '1' + row[1]
+            
+
+        return 'test'
+        
+        self.__disconnectDB()
+
+    def deleteFromTable(self, tableName, whereClause):
+        """ Delete a row from the database where the clause fits """
+        self.__connectDB()
+        cursor = self.conn.cursor()
+
+        cursor.execute('DELETE FROM ' + tableName + ' WHERE [' + whereClause + ']')
+        
+        self.__disconnectDB()
+
     def createTable(self, tableName, columns):
         """ 
         Create a new table in the SQLite database if it doesn't exist 

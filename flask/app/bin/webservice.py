@@ -8,41 +8,36 @@
 
 # Web service imports
 from flask import Flask
+from flask import request
 
 # Database module imports
 import sqlite3
+from SQLiteHandler import SQLiteHandler
 
 ''' Name the application module '''
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 # Route past IP address
 @app.route('/')
 def main():
     return 'Hello, World!'
 
-@app.route('/databasetest')
-def dbtest():
-    conn = sqlite3.connect('test-db')
+@app.route('/createaccount')
+def createaccount():
+    #Retrieve parameters
+    user = request.args.get('user')
+    passwd = request.args.get('passwd')
+    if(user == None):
+        user = 'empty'
+    if(passwd == None):
+        passwd = 'empty'
 
-    # Create table
-    with conn:
-        cur = conn.cursor()
-        #cur.execute("CREATE TABLE Cars(Id INT, Name TEXT, Price INT)")
-        cur.execute("INSERT INTO Cars VALUES(1,'Audi',52642)")
-        cur.execute("INSERT INTO Cars VALUES(2,'Mercedes',57127)")
-        cur.execute("INSERT INTO Cars VALUES(3,'Skoda',9000)")
-        cur.execute("INSERT INTO Cars VALUES(4,'Volvo',29000)")
-        cur.execute("INSERT INTO Cars VALUES(5,'Bentley',350000)")
-        cur.execute("INSERT INTO Cars VALUES(6,'Citroen',21000)")
-        cur.execute("INSERT INTO Cars VALUES(7,'Hummer',41400)")
-        cur.execute("INSERT INTO Cars VALUES(8,'Volkswagen',21600)")
+    handler = SQLiteHandler('PM-Web.db')
+    handler.insertIntoTable('User', 'email, password', '"test1", "test2"')
+        
+    return str(user + passwd)
     
-    # We can also close the connection if we are done with it.
-    # Just be sure any changes have been committed or they will be lost.
-    conn.close()
-    
-    return str('test')
-
 #Implement autorunner when run locally
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
