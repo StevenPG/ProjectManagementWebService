@@ -35,8 +35,14 @@ def createaccount():
         passwd = 'empty'
 
     handler = SQLiteHandler('PM-Web.db')
-    handler.insertIntoTable('User', 'firstname,lastname,email,password,bio,projectlist,picture', 'null,null,"' + user + '","' + passwd + '",null,null,null')
-    var = handler.selectFromTable('User', '*')
+    var = ""
+    if(user == 'empty' and passwd == 'empty'):
+       return str(handler.selectFromTable('UserTable', '*'))
+    try:
+        handler.insertIntoTable('UserTable', 'firstname,lastname,email,password,bio,projectlist,picture', 'null,null,"' + user + '","' + passwd + '",null,null,null')
+    except:
+        var = var + 'Cannot add user to DB\n\t'
+    var = handler.selectFromTable('UserTable', '*')
     
     return str(var)
     
