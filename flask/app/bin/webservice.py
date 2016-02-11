@@ -30,22 +30,49 @@ def createaccount():
     passwd = request.args.get('passwd')
     uniqueId = request.args.get('id')
     if(user == None):
-        user = 'empty'
+        user = False
     if(passwd == None):
-        passwd = 'empty'
+        passwd = False
 
     handler = SQLiteHandler('PM-Web.db')
     var = ""
-    if(user == 'empty' and passwd == 'empty'):
-       return str(handler.selectFromTable('UserTable', '*'))
+    if(user == False and passwd == False):
+       #return str(handler.selectFromTable('UserTable', '*'))
+        return str("-1")
     try:
         handler.insertIntoTable('UserTable', 'firstname,lastname,email,password,bio,projectlist,picture', 'null,null,"' + user + '","' + passwd + '",null,null,null')
     except:
-        var = var + 'Cannot add user to DB\n\t'
-    var = handler.selectFromTable('UserTable', '*')
+        return '1 - User already exists in database'
     
-    return str(var)
+    return '0 - User added to database'
+
+@app.route('/login')
+def login():
+    #Retrieve parameters
+    user = request.args.get('user')
+    passwd = request.args.get('passwd')
+    if(user == None):
+        user = False
+    if(passwd == None):
+        passwd = False
+
+    handler = SQLiteHandler('PM-Web.db')
+    var = ""
+    if(user == False and passwd == False):
+        return str("-1")
+
+    try:
+        user = handler.selectFromTableWhere('UserTable', "*",
+                                            'email = "' + user + '" AND ' +
+                                            'password = "' + passwd + '"')
+        if user == []:
+            return "0"
+        else:
+            return "1"
+    except:
+        return str("-1")
     
+
 #Implement autorunner when run locally
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

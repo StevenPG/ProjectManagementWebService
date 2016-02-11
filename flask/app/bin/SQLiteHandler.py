@@ -47,6 +47,20 @@ class SQLiteHandler(object):
         finally:
             self.__disconnectDB()
 
+    def selectFromTableWhere(self, tableName, columnName, where):
+        """ Retrieve all values that fit the where clause """
+        self.__connectDB()
+        cursor = self.conn.cursor()
+
+        cursor.execute('SELECT ' + columnName + ' FROM ' + tableName +
+                      ' WHERE ' + where)
+
+        
+        
+        return cursor.fetchall()
+        
+        self.__disconnect()
+
     def selectFromTable(self, tableName, columnName):
         """ Retrieve an array of all values in a row within in a table """
         self.__connectDB()
