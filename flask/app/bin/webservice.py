@@ -33,8 +33,24 @@ def selectuser():
     This route is going to search for a user based on
     the parameters given and return the user's entire 
     contents that is stored in the database.
+
+    @param - which record to select from record=
+    @param - a search value under seach=
     '''
-    return "IN_PROGRESS: This route will return a user by params"
+    searchRecord = request.args.get('record')
+    searchString = request.args.get('search')
+    if(searchString == None):
+        return "2"
+
+    handler = SQLiteHandler('PM-Web.db')
+    whereClause = searchRecord + ' = "' + searchString + '"'
+    user = handler.selectFromTableWhere('UserTable', '*', whereClause)
+
+    #Nothing was found
+    if(user == []):
+        return "0"
+    else:
+        return str(user).strip('[(').strip(')]')
 
 # LOCATION OF THE NEXT APP ROUTE
 
