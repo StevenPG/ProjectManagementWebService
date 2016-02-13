@@ -23,6 +23,10 @@ app.config['DEBUG'] = True
 def main():
     return 'Hello, World!'
 
+@app.route('/version')
+def version():
+    return '0.1.2'
+
 @app.route('/createaccount')
 def createaccount():
     #Retrieve parameters
