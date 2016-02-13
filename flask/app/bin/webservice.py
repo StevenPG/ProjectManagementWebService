@@ -27,8 +27,24 @@ def main():
 def version():
     return '0.1.2'
 
+@app.route('/selectuser')
+def selectuser():
+    ''' 
+    This route is going to search for a user based on
+    the parameters given and return the user's entire 
+    contents that is stored in the database.
+    '''
+    return "IN_PROGRESS: This route will return a user by params"
+
+# LOCATION OF THE NEXT APP ROUTE
+
 @app.route('/createaccount')
 def createaccount():
+    '''
+    This method creates an entry in the user table.
+    TODO - It should eventually be replaced with a
+    a generic insert function
+    '''
     #Retrieve parameters
     user = request.args.get('user')
     passwd = request.args.get('passwd')
