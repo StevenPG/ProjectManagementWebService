@@ -25,26 +25,28 @@ def main():
 
 @app.route('/version')
 def version():
-    return '0.1.2'
+    return "0.1.4"
 
-@app.route('/selectuser')
-def selectuser():
+@app.route('/select')
+def select():
     ''' 
-    This route is going to search for a user based on
-    the parameters given and return the user's entire 
+    This route is going to search for a record based on
+    the parameters given and return the record's entire 
     contents that is stored in the database.
 
     @param - which record to select from record=
     @param - a search value under seach=
+    @param - which table to search
     '''
     searchRecord = request.args.get('record')
     searchString = request.args.get('search')
-    if(searchString == None):
+    tableString = request.args.get('table')
+    if(searchString == None or tableString == None or searchRecord == None):
         return "2"
 
     handler = SQLiteHandler('PM-Web.db')
     whereClause = searchRecord + ' = "' + searchString + '"'
-    user = handler.selectFromTableWhere('UserTable', '*', whereClause)
+    user = handler.selectFromTableWhere(tableString, '*', whereClause)
 
     #Nothing was found
     if(user == []):
@@ -52,7 +54,29 @@ def selectuser():
     else:
         return str(user).strip('[(').strip(')]')
 
-# LOCATION OF THE NEXT APP ROUTE
+@app.route('/insert')
+def insert():
+    '''
+    This route is going to insert a value into an input table.
+    This value will be a row, and syntax must be valid SQL syntax
+    for this operation to complete.
+
+    @param SQLString
+    @param table
+    '''
+    valueString = request.args.get('valuestring')
+    columnString = request.args.get('columnstring')    
+    table = request.args.get('table')
+
+    if( valueString == None or table == None or columnString == None):
+        return "2"
+
+    handler = SQLiteHandler('PM-Web.db')
+    try:
+        handler.insertIntoTable(table, columnString, valueString)
+        return "1"
+    except:
+        return "0 - Value already exists in table"
 
 @app.route('/createaccount')
 def createaccount():
