@@ -25,7 +25,44 @@ def main():
 
 @app.route('/version')
 def version():
-    return "0.1.4"
+    return "0.1.16"
+
+@app.route('/getall')
+def getall():
+    '''
+    This route returns a comma seperated list of
+    all users in the database.
+    '''
+    table = request.args.get('table')
+    handler = SQLiteHandler('PM-Web.db')
+    if(not table == None):
+        try:
+            users = handler.selectFromTable(table, "*")
+        except:
+            users = []
+    else:
+        users = handler.selectFromTable("UserTable", "*")
+
+    return str(users)
+    
+@app.route('/update')
+def update():
+    '''
+    This route is going to take the get parameters and
+    update a specific record inside the database.
+
+    @param table - which table to update the row in
+    @param updateString - the entire updatestring to rebuild the row with
+    '''
+    table = request.args.get('table')
+    updateString = request.args.get('updatestring').replace("_", " ")
+    if(table == None or updateString == None):
+        return "2"
+
+    handler = SQLiteHandler('PM-Web.db')
+    update = handler.updateRow(table, updateString)
+
+    return "1"
 
 @app.route('/select')
 def select():
@@ -42,7 +79,7 @@ def select():
     searchString = request.args.get('search')
     tableString = request.args.get('table')
     if(searchString == None or tableString == None or searchRecord == None):
-        return "2"
+        return "-1"
 
     handler = SQLiteHandler('PM-Web.db')
     whereClause = searchRecord + ' = "' + searchString + '"'
@@ -72,11 +109,16 @@ def insert():
         return "2"
 
     handler = SQLiteHandler('PM-Web.db')
+
+    print table, columnString, valueString
+
     try:
         handler.insertIntoTable(table, columnString, valueString)
-        return "1"
     except:
-        return "0 - Value already exists in table"
+        return "0"
+
+    # Otherwise
+    return "1"
 
 @app.route('/createaccount')
 def createaccount():

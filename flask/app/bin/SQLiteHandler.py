@@ -47,6 +47,17 @@ class SQLiteHandler(object):
         finally:
             self.__disconnectDB()
 
+    def updateRow(self, tableName, updatestring):
+        """ Update a row in the table with the updatestring """
+        self.__connectDB()
+        cursor = self.conn.cursor()
+
+        cursor.execute('UPDATE ' + tableName + ' SET ' + updatestring)
+
+        self.conn.commit()
+        
+        self.__disconnectDB()
+
     def selectFromTableWhere(self, tableName, columnName, where):
         """ Retrieve all values that fit the where clause """
         self.__connectDB()
@@ -54,8 +65,6 @@ class SQLiteHandler(object):
 
         cursor.execute('SELECT ' + columnName + ' FROM ' + tableName +
                       ' WHERE ' + where)
-
-        
         
         return cursor.fetchall()
         
