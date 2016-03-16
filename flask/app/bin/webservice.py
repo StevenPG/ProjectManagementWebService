@@ -25,7 +25,15 @@ def main():
 
 @app.route('/version')
 def version():
-    return "0.1.16"
+    return "1.0.2"
+
+@app.route('/accept')
+def acceptRequest():
+    currentProject = request.args.get('project')
+    addedUser = request.args.get('addeduser')
+    if(currentProject == None or addedUser == None):
+        return "2"
+    return currentProject + " 1 " + addedUser
 
 @app.route('/getall')
 def getall():
