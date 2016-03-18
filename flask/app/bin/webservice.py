@@ -25,15 +25,35 @@ def main():
 
 @app.route('/version')
 def version():
-    return "1.0.2"
+    return "1.1.0"
 
 @app.route('/accept')
 def acceptRequest():
-    currentProject = request.args.get('project')
+    currentProject = request.args.get('projectid')
     addedUser = request.args.get('addeduser')
     if(currentProject == None or addedUser == None):
         return "2"
-    return currentProject + " 1 " + addedUser
+    handler = SQLiteHandler('PM-Web.db')
+    currentMemberList = handler.selectFromTableWhere(
+        "projecttable", "*", "ProjectID=" + str(currentProject))
+    memberListasList = list(currentMemberList[0])
+
+    initialMemberList = memberListasList[2]
+    try:
+        if(initialMemberList == ""):
+            updateString = 'MemberList="' + \
+                           addedUser + '" WHERE ProjectId="' + \
+                           currentProject + '"'
+        else:
+            updateString = 'MemberList="' + \
+                           initialMemberList + '--' + \
+                           addedUser + '" WHERE ProjectId="' + \
+                           currentProject + '"'
+        handler.updateRow("ProjectTable", updateString)
+    except:
+        return "0"
+    
+    return "1"
 
 @app.route('/getall')
 def getall():
