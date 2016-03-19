@@ -25,7 +25,7 @@ def main():
 
 @app.route('/version')
 def version():
-    return "1.1.0"
+    return "1.2.1"
 
 @app.route('/accept')
 def acceptRequest():
@@ -38,6 +38,7 @@ def acceptRequest():
         "projecttable", "*", "ProjectID=" + str(currentProject))
     memberListasList = list(currentMemberList[0])
 
+    # Update the project's memberlist
     initialMemberList = memberListasList[2]
     try:
         if(initialMemberList == ""):
@@ -51,8 +52,28 @@ def acceptRequest():
                            currentProject + '"'
         handler.updateRow("ProjectTable", updateString)
     except:
-        return "0"
-    
+        return "0 - Failed to update project's memberlist"
+
+    # Update the added user's projectlist
+    addedUserProjectList = handler.selectFromTableWhere(
+        "usertable", "*", "email=\"" + str(addedUser) + "\"")
+    projectListasList = list(addedUserProjectList[0])
+    userProjList = projectListasList[6]
+
+    try:
+        if(userProjList == ""):
+            updateString = 'ProjectList="' + \
+                           currentProject + '" WHERE Email="' + \
+                           addedUser + '"'
+        else:
+            updateString = 'ProjectList="' + \
+                           userProjList + '--' + \
+                           currentProject + '" WHERE Email="' + \
+                           addedUser + '"'
+            handler.updateRow("UserTable", updateString)
+    except:
+        return "0 - Failed to update user's projectlist"
+
     return "1"
 
 @app.route('/getall')

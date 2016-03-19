@@ -422,3 +422,325 @@ OperationalError: near "UPDATE": syntax error
 24.55.154.193 - - [18/Mar/2016 02:59:06] "GET /accept?projectid=51&addeduser=sgant869@live.kutztown.edu HTTP/1.1" 200 -
 24.55.154.193 - - [18/Mar/2016 02:59:13] "GET / HTTP/1.1" 200 -
 24.55.154.193 - - [18/Mar/2016 02:59:13] "GET /select?search=51&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+24.55.154.193 - - [18/Mar/2016 03:03:56] "GET / HTTP/1.1" 200 -
+24.55.154.193 - - [18/Mar/2016 03:03:56] "GET /getall HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:41:57] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:41:57] "GET /login?user=hrich558@live.kutztown.edu&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:42:35] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:42:35] "GET /createaccount?user=yunior2000@hotmail.com&passwd=114 HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:42:35] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:42:35] "GET /select?search=yunior2000@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET /insert?table=ProjectTable&valuestring="yunior2000@hotmail.com","","","testing2","thisprojectisfortestingpurpose",""&columnstring=leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET /select?search=testing2&record=projectname&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET /update?table=UserTable&updatestring=projectlist="n--52"_WHERE_UserID="25" HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:21] "GET /select?search=25&record=userid&table=usertable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:30] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:43:30] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:58:10] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:58:10] "GET /login?user=yunior2000@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:58:51] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 15:58:51] "GET /createaccount?user=yunior2000@hotmail.com&passwd=114 HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:09:59] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:00] "GET /createaccount?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:00] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:00] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET /insert?table=ProjectTable&valuestring="hrich333@hotmail.com","","","the33","testingapplication",""&columnstring=leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET /select?search=the33&record=projectname&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET /update?table=UserTable&updatestring=projectlist="n--53"_WHERE_UserID="26" HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:44] "GET /select?search=26&record=userid&table=usertable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:49] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:10:49] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:14:55] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:14:55] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:14:55] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:14:55] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:02] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:02] "GET /select?search=n&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:07] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:08] "GET /select?search=n&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:09] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:09] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:12] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:15:12] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:21] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:21] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:22] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:22] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:25] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:25] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:25] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:25] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:34] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:20:35] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:47] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:47] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:47] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:47] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:50] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:24:51] "GET /select?search=n&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:25:00] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:25:00] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:25:01] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:25:01] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:36] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:36] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:36] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:36] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:38] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:38] "GET /select?search=n&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:40] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:40] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:42] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:27:42] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:07] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:08] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:08] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:08] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:10] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:10] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:11] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:30:11] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:27] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:27] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:27] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:28] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:35] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:35] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:38] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:32:38] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:52] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:52] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:53] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:53] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:55] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:55] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:57] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:35:57] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:40:59] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:40:59] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:00] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:00] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:02] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:02] "GET /select?search=53&record=ProjectId&table=ProjectTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:03] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:41:03] "GET /select?search=&record=TaskId&table=TaskTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:31] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:31] "GET /login?user=hrich333@live.kutztown.edu&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:46] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:46] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:47] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:50:47] "GET /select?search=hrich333@hotmail.com&record=email&table=UserTable HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:51:26] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 16:51:26] "GET /login?user=hrich333@hotmail.com&passwd=Hector HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ProjectTable leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress "abc@abc.com","","","TestingProject","",""
+ProjectTable leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress "yunior2000@hotmail.com","","","testing2","thisprojectisfortestingpurpose",""
+ProjectTable leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress "hrich333@hotmail.com","","","the33","testingapplication",""
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+64.121.122.72 - - [19/Mar/2016 17:16:28] "GET / HTTP/1.1" 200 -
+64.121.122.72 - - [19/Mar/2016 17:16:28] "GET /login?user=hrich333@hotmail.com&passwd=Hecotr HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:16:59] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:16:59] "GET /favicon.ico HTTP/1.1" 404 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:21:19] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:25] "GET /accept HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?projectid=41&addeduser=test HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py", line 59, in acceptRequest
+    "usertable", "*", "email=" + str(addedUser))
+  File "/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/SQLiteHandler.py", line 67, in selectFromTableWhere
+    ' WHERE ' + where)
+OperationalError: no such column: test
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:29] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:30] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:21:46] "GET /accept?projectid=41&addeduser=test HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:21:57] "GET /accept?projectid=50&addeduser=test HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:22:07] "GET /accept?projectid=50&addeduser=%22tyrsniper94@hotmail.com%22 HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:22:33] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:22:52] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:00] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:23:53] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py", line 60, in acceptRequest
+    projectListasList = list(addedUserProjectList[6])
+IndexError: list index out of range
+73.81.0.194 - - [19/Mar/2016 17:23:53] "GET /accept?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:53] "GET /accept?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:54] "GET /accept?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:54] "GET /accept?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:54] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:23:54] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:24:02] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steve/.local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py", line 61, in acceptRequest
+    userProjList = addedUerProjectList[6]
+NameError: global name 'addedUerProjectList' is not defined
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:24:36] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:24:37] "GET /accept?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:24:53] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+  File "webservice.py", line 66
+    return str(addedUser) + ": " + str(userProjList);
+         ^
+IndentationError: expected an indented block
+  File "webservice.py", line 74
+    return str(addedUser) + ": " + str(userProjList);
+         ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:28:57] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:28:59] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:29:24] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:29:24] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+ * Detected change in '/home/steve/ProjectManagement/FlaskWebService/flask/app/bin/webservice.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 165-611-794
+73.81.0.194 - - [19/Mar/2016 17:31:05] "GET /version HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:31:07] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:31:12] "GET /accept?projectid=50&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:32:44] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:32:54] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:32:54] "GET /createaccount?user=abcd@abcd.com&passwd=115116101118101 HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:32:54] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:32:54] "GET /select?search=abcd@abcd.com&record=email&table=UserTable HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET /insert?table=ProjectTable&valuestring="abcd@abcd.com","","","AddMemberTestProj","",""&columnstring=leaderlist,memberlist,tasklist,projectname,projectdescription,projectprogress HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET /select?search=AddMemberTestProj&record=projectname&table=ProjectTable HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET /update?table=UserTable&updatestring=projectlist="54"_WHERE_UserID="27" HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:11] "GET /select?search=27&record=userid&table=usertable HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:28] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:33:28] "GET /getall HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:34:21] "GET /accept?projectid=54&addeduser=tyrsniper94@hotmail.com HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:35:42] "GET /accept?projectid=54&addeduser=sgant869@live.kutztown.edu HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:36:28] "GET / HTTP/1.1" 200 -
+73.81.0.194 - - [19/Mar/2016 17:36:28] "GET /login?user=sgant869@live.kutztown.edu&passwd=83116101118101110 HTTP/1.1" 200 -
