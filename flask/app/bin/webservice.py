@@ -25,7 +25,7 @@ def main():
 
 @app.route('/version')
 def version():
-    return "1.2.1"
+    return "1.2.4"
 
 @app.route('/accept')
 def acceptRequest():
@@ -38,21 +38,24 @@ def acceptRequest():
         "projecttable", "*", "ProjectID=" + str(currentProject))
     memberListasList = list(currentMemberList[0])
 
+    message = ""
+    
     # Update the project's memberlist
     initialMemberList = memberListasList[2]
     try:
         if(initialMemberList == ""):
             updateString = 'MemberList="' + \
-                           addedUser + '" WHERE ProjectId="' + \
-                           currentProject + '"'
+                           str(addedUser) + '" WHERE ProjectId="' + \
+                           str(currentProject) + '"'
+            handler.updateRow("ProjectTable", updateString)
         else:
             updateString = 'MemberList="' + \
-                           initialMemberList + '--' + \
-                           addedUser + '" WHERE ProjectId="' + \
-                           currentProject + '"'
-        handler.updateRow("ProjectTable", updateString)
+                           str(initialMemberList) + '--' + \
+                           str(addedUser) + '" WHERE ProjectId="' + \
+                           str(currentProject) + '"'
+            handler.updateRow("ProjectTable", updateString)
     except:
-        return "0 - Failed to update project's memberlist"
+        return "0 - Failed to update project's memberlist" + initialMemberList
 
     # Update the added user's projectlist
     addedUserProjectList = handler.selectFromTableWhere(
@@ -63,17 +66,62 @@ def acceptRequest():
     try:
         if(userProjList == ""):
             updateString = 'ProjectList="' + \
-                           currentProject + '" WHERE Email="' + \
-                           addedUser + '"'
+                           str(currentProject) + '" WHERE Email="' + \
+                           str(addedUser) + '"'
+            handler.updateRow("UserTable", updateString)
         else:
             updateString = 'ProjectList="' + \
-                           userProjList + '--' + \
-                           currentProject + '" WHERE Email="' + \
-                           addedUser + '"'
+                           str(userProjList) + '--' + \
+                           str(currentProject) + '" WHERE Email="' + \
+                           str(addedUser) + '"'
             handler.updateRow("UserTable", updateString)
     except:
         return "0 - Failed to update user's projectlist"
 
+    return "1"
+
+@app.route('/removeUser')
+def remove():
+    currentProject = request.args.get('projectid')
+    addedUser = request.args.get('addeduser')
+    if(currentProject == None or addedUser == None):
+        return "2"
+    handler = SQLiteHandler('PM-Web.db')
+    currentMemberList = handler.selectFromTableWhere(
+        "projecttable", "*", "ProjectID=" + str(currentProject))
+    memberListasList = list(currentMemberList[0])
+    
+    message = ""
+    
+    # Update the project's memberlist
+    initialMemberList = memberListasList[2]
+
+    newMemberList = initialMemberList.replace(addedUser, "")
+    
+    try:
+        updateString = 'MemberList="' + \
+                       str(newMemberList) + '" WHERE ProjectId="' + \
+                       str(currentProject) + '"'
+        handler.updateRow("ProjectTable", updateString)
+    except:
+        return "0 - Failed to update project's memberlist" + initialMemberList
+    
+    # Update the added user's projectlist
+    addedUserProjectList = handler.selectFromTableWhere(
+        "usertable", "*", "email=\"" + str(addedUser) + "\"")
+    projectListasList = list(addedUserProjectList[0])
+    userProjList = projectListasList[6]
+
+    newProjectList = userProjList.replace(currentProject, "")
+
+    try:
+        updateString = 'ProjectList="' + \
+                       str(newProjectList) + '" WHERE Email="' + \
+                       str(addedUser) + '"'
+        handler.updateRow("UserTable", updateString)
+    except:
+        return "0 - Failed to update user's projectlist"
+    
     return "1"
 
 @app.route('/getall')

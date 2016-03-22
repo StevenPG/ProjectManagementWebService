@@ -58,6 +58,8 @@ class SQLiteHandler(object):
         
         self.__disconnectDB()
 
+        return 'UPDATE ' + str(tableName) + ' SET ' + str(updatestring)
+
     def selectFromTableWhere(self, tableName, columnName, where):
         """ Retrieve all values that fit the where clause """
         self.__connectDB()
