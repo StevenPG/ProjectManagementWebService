@@ -13,6 +13,7 @@ from flask import request
 # Database module imports
 import sqlite3
 from SQLiteHandler import SQLiteHandler
+import subprocess
 
 ''' Name the application module '''
 app = Flask(__name__)
@@ -25,7 +26,29 @@ def main():
 
 @app.route('/version')
 def version():
-    return "1.2.4"
+    return "1.4.0"
+
+@app.route('/genericSelect')
+def genericSelect():
+    table = request.args.get('table')
+    where = request.args.get('where')
+    handler = SQLiteHandler('PM-Web.db')
+
+    return str(handler.selectFromTableWhere(table, "*", where))
+
+@app.route('/genericInsert')
+def genericInsert():
+    table = request.args.get('table')
+    where = request.args.get('where')
+    columnString = request.args.get('columnString')
+    valueString = request.args.get('valueString')
+
+    if(table == None or where == None or columnString == None or valueString == None):
+        return "2"
+    
+    # Add to messaging table
+    
+    return "0"
 
 @app.route('/accept')
 def acceptRequest():
