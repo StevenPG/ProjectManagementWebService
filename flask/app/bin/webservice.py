@@ -16,27 +16,26 @@ from SQLiteHandler import SQLiteHandler
 import subprocess
 
 ''' Name the application module '''
-app = Flask(__name__)
-app.config['DEBUG'] = True
+application = Flask(__name__)
+application.config['DEBUG'] = True
 
 # Route past IP address
-@app.route('/')
+@application.route('/')
 def main():
     return 'Hello, World!'
 
-@app.route('/version')
+@application.route('/version')
 def version():
-    return "1.4.0"
+    return "2.1.1"
 
-@app.route('/genericSelect')
+@application.route('/genericSelect')
 def genericSelect():
     table = request.args.get('table')
     where = request.args.get('where')
     handler = SQLiteHandler('PM-Web.db')
-
     return str(handler.selectFromTableWhere(table, "*", where))
 
-@app.route('/genericInsert')
+@application.route('/genericInsert')
 def genericInsert():
     table = request.args.get('table')
     where = request.args.get('where')
@@ -50,7 +49,7 @@ def genericInsert():
     
     return "0"
 
-@app.route('/accept')
+@application.route('/accept')
 def acceptRequest():
     currentProject = request.args.get('projectid')
     addedUser = request.args.get('addeduser')
@@ -101,9 +100,9 @@ def acceptRequest():
     except:
         return "0 - Failed to update user's projectlist"
 
-    return "1"
+    return "Successfully joined the project!"
 
-@app.route('/removeUser')
+@application.route('/removeUser')
 def remove():
     currentProject = request.args.get('projectid')
     addedUser = request.args.get('addeduser')
@@ -145,9 +144,9 @@ def remove():
     except:
         return "0 - Failed to update user's projectlist"
     
-    return "1"
+    return "Successfully removed from the project"
 
-@app.route('/getall')
+@application.route('/getall')
 def getall():
     '''
     This route returns a comma seperated list of
@@ -165,7 +164,7 @@ def getall():
 
     return str(users)
     
-@app.route('/update')
+@application.route('/update')
 def update():
     '''
     This route is going to take the get parameters and
@@ -175,16 +174,18 @@ def update():
     @param updateString - the entire updatestring to rebuild the row with
     '''
     table = request.args.get('table')
-    updateString = request.args.get('updatestring').replace("_", " ")
+    updateString = request.args.get('updatestring').replace("**", " ")
     if(table == None or updateString == None):
         return "2"
-
-    handler = SQLiteHandler('PM-Web.db')
-    update = handler.updateRow(table, updateString)
-
+    try:
+        handler = SQLiteHandler('PM-Web.db')
+        update = handler.updateRow(table, updateString)
+    except:
+        return "UpdateString: " + updateString
+        
     return "1"
 
-@app.route('/select')
+@application.route('/select')
 def select():
     ''' 
     This route is going to search for a record based on
@@ -211,7 +212,7 @@ def select():
     else:
         return str(user).strip('[(').strip(')]')
 
-@app.route('/insert')
+@application.route('/insert')
 def insert():
     '''
     This route is going to insert a value into an input table.
@@ -240,7 +241,7 @@ def insert():
     # Otherwise
     return "1"
 
-@app.route('/createaccount')
+@application.route('/createaccount')
 def createaccount():
     '''
     This method creates an entry in the user table.
@@ -268,7 +269,7 @@ def createaccount():
     
     return '0 - User added to database'
 
-@app.route('/login')
+@application.route('/login')
 def login():
     #Retrieve parameters
     user = request.args.get('user')
@@ -297,4 +298,4 @@ def login():
 
 #Implement autorunner when run locally
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    application.run(host='0.0.0.0')
